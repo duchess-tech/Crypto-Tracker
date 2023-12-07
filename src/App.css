@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: url("./src/images/cryptoimg2.jpg"); */
+}
+
+.removeScrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.blog-case {
+    width: 200px;
+    height: 300px;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.blogname {
+    font-size: 7em;
+    background: #CA4246;
+    background-color: #CA4246;
+    background: conic-gradient(#CA4246 16.666%,
+            #E16541 16.666%,
+            #E16541 33.333%,
+            #F18F43 33.333%,
+            #F18F43 50%,
+            #8B9862 50%,
+            #8B9862 66.666%,
+            #476098 66.666%,
+            #476098 83.333%,
+            #A7489B 83.333%);
+
+    background-size: 57%;
+    background-repeat: repeat;
+
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+
+    animation: rainbow-text-animation-rev 0.5s ease forwards;
+
+    cursor: pointer;
+}
+
+.blogname:hover {
+    animation: rainbow-text-animation 0.5s ease forwards;
+}
+
+@keyframes blogname-animation {
+    0% {
+        background-size: 57%;
+        background-position: 0 0;
+    }
+
+    20% {
+        background-size: 57%;
+        background-position: 0 1em;
+    }
+
+    100% {
+        background-size: 300%;
+        background-position: -9em 1em;
+    }
+}
+
+@keyframes rainbow-text-animation-rev {
+    0% {
+        background-size: 300%;
+        background-position: -9em 1em;
+    }
+
+    20% {
+        background-size: 57%;
+        background-position: 0 1em;
+    }
+
+    100% {
+        background-size: 57%;
+        background-position: 0 0;
+    }
+}
+
+
+
+
+
+
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.auth-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.auth-links a:hover {
+    color: #555;
+}
+
+.blog-banner {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+}
+
+.blog-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-description {
+    margin-bottom: 20px;
+}
+
+.read-more-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.crypto-widget {
+    border-radius: 24px;
+    background: rgba(81, 150, 171, 0.2);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(10px);
+
+}
+
+
+
+.crypto-price-negative {
+    color: red;
+}
+
+
+.crypto-list {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.crypto-list li {
+    transition: background-color 0.3s;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heatmap-cell {
+    display: flex;
+    align-items: center;
+}
+
+.heatmap-green {
+    background-color: #c8e6c9;
+    /* Light green */
+}
+
+.heatmap-red {
+    background-color: #ffcdd2;
+    /* Light red */
+}
+
+.talk-to-expert {
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.talk-to-expert:hover {
+    background-color: #0056b3;
+}
+
+.top-banner {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #007bff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
