@@ -7,7 +7,7 @@ function Nav() {
             <header className="blogname w-full  xl:w-2/5 p-2 xl:p-0 text-center">
                 <div className="xl:text-2xl text-lg  font-bold">
 
-                    <Link to={"/Home"} className="flex"> <span>Crypt</span><img src="./src/images/coinfinal.jpg" alt="" className="w-[30px]" /><span>CurrencyTracker</span> </Link>
+                    <Link to={"/Home"} className="flex"> <span>Crypt</span><img src="./src/images/bitcoin2.jpg" alt="" className="w-[30px]" /><span>CurrencyTracker</span> </Link>
                 </div>
             </header>
 
