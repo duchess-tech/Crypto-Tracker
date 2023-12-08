@@ -1,10 +1,10 @@
 // import jwt from 'jsonwebtoken'
 
-// const SecretKey = 'Esther'
+// const SecretKey = 'cryptoTracker'
 
 // const AppAuth = {
-//     generateToken: (user) => jwt.sign(user, SecretKey, { expiresIn: '1h' }),
-//     verifyToken: (token) => jwt.verify(token, satisfies),
+//     // generateToken: (user) => jwt.sign(user, SecretKey, { expiresIn: '1h' }),
+//     // verifyToken: (token) => jwt.verify(token),
 
 // };
 
