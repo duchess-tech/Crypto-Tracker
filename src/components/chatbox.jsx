@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import cors from "cors"
 cors()
 const Chatbox = () => {
-    const [inputMessage, setInputMessage] = useState('');
+    const [inputMessage, setInputMessage] = useState('')
     const [messages, setMessages] = useState([
         { role: 'system', content: 'You are a helpful assistant.' },
         { role: 'user', content: 'Hello!' }, { max_tokens: 5, },
-    ]);
+    ])
 
     const handleSendMessage = async (inputMessage) => {
-        setMessages([...messages, { role: 'user', content: inputMessage }]);
+        setMessages([...messages, { role: 'user', content: inputMessage }])
 
         try {
             const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -22,29 +22,29 @@ const Chatbox = () => {
                     model: 'gpt-3.5-turbo-16k-0613',
                     messages,
                 }),
-            });
+            })
             console.log(response)
             if (response.ok) {
-                const responseData = (await response.json()).choices[0].message.content;
-                setMessages([...messages, { role: 'assistant', content: responseData }]);
+                const responseData = (await response.json()).choices[0].message.content
+                setMessages([...messages, { role: 'assistant', content: responseData }])
             } else {
-                console.error('Failed to fetch response from OpenAI API');
+                console.error('Failed to fetch response from OpenAI API')
             }
         } catch (error) {
-            console.error('Error processing API response:', error);
+            console.error('Error processing API response:', error)
         }
-    };
+    }
 
     const handleInputChange = (e) => {
-        setInputMessage(e.target.value);
-    };
+        setInputMessage(e.target.value)
+    }
 
     const handleSendMessageClick = () => {
         if (inputMessage.trim() !== '') {
-            handleSendMessage(inputMessage);
-            setInputMessage('');
+            handleSendMessage(inputMessage)
+            setInputMessage('')
         }
-    };
+    }
 
     return (
         <div className="chatbox chatboxx">
@@ -65,7 +65,7 @@ const Chatbox = () => {
                 <button onClick={handleSendMessageClick}>Send</button>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Chatbox;
+export default Chatbox

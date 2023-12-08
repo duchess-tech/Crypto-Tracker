@@ -1,24 +1,20 @@
 import { useEffect, useState } from "react"
 import Nav from "../components/navbar"
 import httpAuth from "../utils/http"
-import { Spinner } from "@material-tailwind/react";
-import { Link, Outlet } from "react-router-dom";
-import Blog from "../components/Blog";
-import Login from "../components/login";
-import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import Chatbox from "../components/chatbox";
+import { Spinner } from "@material-tailwind/react"
+import { Link } from "react-router-dom"
+import Blog from "../components/Blog"
+import Login from "../components/login"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons"
 
 
 function Home() {
     const [loading, setLoading] = useState(false)
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false)
     const [loggedIn, setLoggedIn] = useState(false)
     const [crypto, setCrypto] = useState([])
     const [blog, setBlog] = useState(false)
-    const [chatbox, setChartBox] = useState(false)
-
 
 
 
@@ -39,18 +35,20 @@ function Home() {
             setOpen(true)
         }
     }, [])
-    const handleOpen = () => setOpen(!open);
+    const handleOpen = () => setOpen(!open)
 
 
     const handleLogin = () => {
-        setLoggedIn(true);
-    };
+        setLoggedIn(true)
+    }
 
     const handleLogout = () => {
         setOpen(true)
-        setLoggedIn(false);
-        localStorage.removeItem('token');
-    };
+        setLoggedIn(false)
+        localStorage.removeItem('token')
+        location.reload()
+
+    }
 
     const GetCryptoData = async () => {
         setLoading(true)
@@ -67,7 +65,7 @@ function Home() {
                 }
             )
 
-            const data = res.data;
+            const data = res.data
             console.log(data)
 
             const updatedData = Object.entries(data).map(([id, { current_price, image, name, price_change_24h
@@ -84,13 +82,13 @@ function Home() {
                 }
             })
 
-            setCrypto(updatedData);
+            setCrypto(updatedData)
             setLoading(false)
 
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
-    };
+    }
 
 
 
@@ -100,79 +98,37 @@ function Home() {
         const interval = setInterval(() => {
             GetCryptoData()
         }, 60000)
-        return () => clearInterval(interval);
+        return () => clearInterval(interval)
 
-    }, []);
+    }, [])
 
     const handleReadmore = () => {
         setBlog(!blog)
     }
 
-    const handleChatBox = () => {
-        setChartBox(!chatbox)
-    }
-
-
-
-
-
-
-
-
-
-
     useEffect(() => {
         const loadBrevoConversationsScript = () => {
-            window.BrevoConversationsID = '657311b2adb20f661378cb67';
+            window.BrevoConversationsID = '657311b2adb20f661378cb67'
             window.BrevoConversations = window.BrevoConversations || function () {
-                (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
-            };
-
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-
-            if (document.head) {
-                document.head.appendChild(script);
+                (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments)
             }
-        };
 
-        loadBrevoConversationsScript();
-    }, []);
+            const script = document.createElement('script')
+            script.async = true
+            script.src = 'https://conversations-widget.brevo.com/brevo-conversations.js'
 
+            if (localStorage.getItem("token")) {
+                if (document.head) {
+                    document.head.appendChild(script)
+                }
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        loadBrevoConversationsScript()
+    }, [])
 
     return (
         < div className="bg-cover relative bg-center h-screen ">
-
-
-
-
-
-
-
-
-
-
-
-
-
             <Nav handleLogout={handleLogout} handleLogin={handleLogin} handleOpen={handleOpen} />
             <Login open={open} setOpen={setOpen} handleOpen={handleOpen} />
 
@@ -181,13 +137,11 @@ function Home() {
                 <h1 >Latest Blog Post: Exploring Cryptocurrency Trends</h1>
                 <p className="text-sm p-2">Stay informed about the latest trends and developments in the cryptocurrency world.</p>
                 <button className="btn btn-primary p-2 mt-2 hover:bg-white hover:text-[#ce6e55] ">
-                    <Link onClick={handleReadmore} className=" " >{blog ? "show less" : "Readmore"} {blog ? <FontAwesomeIcon icon={faArrowUp} /> : <FontAwesomeIcon icon={faArrowDown} />}</Link>
+                    <Link onClick={handleReadmore} className=" font-bold " >{blog ? "Show less" : "Readmore"} {blog ? <FontAwesomeIcon icon={faArrowUp} /> : <FontAwesomeIcon icon={faArrowDown} />}</Link>
                 </button>
             </div>
             {blog && <Blog setBlog={setBlog} />}
             {loading && <span className="flex justify-center mt-24"><Spinner /></span>}
-
-
             <div className="  flex flex-wrap mt-10 justify-center xl:m-auto xl:gap-8 xl:mt-12 mb-[300px] gap-6">
                 {!loading && crypto.map((cryp) => (
                     <div key={cryp.id} className="relative mb-24 xl:mb:0   hover:-translate-y-1 hover:scale-110  duration-300 ">
@@ -217,22 +171,10 @@ function Home() {
                     </div>
 
                 ))}
-
-
-
-
             </div>
-
-
-
             <footer className="fixed flex items-center justify-center gap-4   w-full bottom-0">
-
-                <p>&copy; 2023 CryptoCurrency Tracker</p>
-
+                <p> &copy; 2023 CryptoCurrency Tracker</p>
             </footer>
-
-
-
         </div>
     )
 

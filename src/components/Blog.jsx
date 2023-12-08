@@ -1,8 +1,6 @@
-import { useState } from "react";
-import httpAuth from "../utils/http";
-import { useEffect } from "react";
-import { data } from "autoprefixer";
-import { Spinner } from "@material-tailwind/react";
+import { useState } from "react"
+import { useEffect } from "react"
+import { Spinner } from "@material-tailwind/react"
 
 function Blog() {
     const [newsData, setNewsData] = useState([])
@@ -26,7 +24,7 @@ function Blog() {
                 setLoading(false)
             }
         }
-        fetchCryptoNews();
+        fetchCryptoNews()
 
     }, [])
 
