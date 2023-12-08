@@ -87,7 +87,7 @@ const Login = ({ open, setOpen, handleOpen }) => {
                                 <Dialog.Panel className="relative  justify-center  lg:p-0 transform overflow-auto removeScrollbar lg:w-9/12 h-[620px]   lg:h-[500px] bg-white rounded-lg  shadow-xl transition-all    sm:my-8 sm:w-full sm:max-w-lg">
                                     <div className="flex sticky top-0  lg:w-full bg-white p-3 left-0 font-bold xl:justify-center xl:text-2xl   lg:justify-start lg:gap-32">
 
-                                        <h1 className=' font-bold flex'>Welcome to Crypt<span><img src="images/coin2.jpg" alt="" className="w-[30px]" /></span>Tracker</h1>
+                                        <h1 className=' font-bold flex'>Welcome to Crypt<span><img src="/images/coin2.jpg" alt="" className="w-[30px]" /></span>Tracker</h1>
 
                                     </div>
                                     <hr />

@@ -208,6 +208,19 @@ main {
     transition: background-color 0.3s;
 }
 
+.chatboxx {
+    position: fixed;
+    bottom: 100px;
+    right: 3px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 .talk-to-expert:hover {
     background-color: #0056b3;
 }
@@ -236,4 +249,57 @@ footer {
     text-align: center;
     padding: 1em 0;
 
+}
+
+/* Chatbox styles */
+.chatbox {
+    width: 300px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+/* Message styles */
+.message {
+    padding: 8px;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+.message.user {
+    background-color: #4caf50;
+    /* Green for user messages */
+    color: #fff;
+    align-self: flex-end;
+}
+
+.message.assistance {
+    background-color: #2196f3;
+    /* Blue for bot messages */
+    color: #fff;
+    align-self: flex-start;
+}
+
+/* Input area styles */
+.chatbox-input {
+    display: flex;
+    padding: 8px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbox-input input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chatbox-input button {
+    padding: 8px;
+    background-color: #8096ac;
+    /* Green for the send button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

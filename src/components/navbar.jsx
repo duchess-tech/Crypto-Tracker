@@ -22,7 +22,7 @@ function Nav({ handleLogout, handleOpen }) {
             <button className="hover:border-b-2 border-b-white hover:p-2 hover:animate-pulse"><Link>About</Link></button>
             <button className="hover:border-b-2 border-b-white hover:p-2 hover:animate-pulse   " ><Link>Contact</Link></button>
 
-            <button className="hover:border-b-2 border-b-white hover:p-2 hover:animate-pulse" onClick={handleOpen}>
+            <button className="hover:border-b-2 border-b-white hover:p-2 hover:animate-pulse">
                 <Link>Services</Link>
             </button>
             <button className="hover:border-b-2 border-b-white hover:p-2 hover:animate-pulse" >

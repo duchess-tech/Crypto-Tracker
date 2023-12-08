@@ -43,11 +43,11 @@ function Blog() {
 
             {loading && <span className="flex justify-center mt-24"><Spinner /></span>}
 
-            <div className="flex w-11/12 gap-6 p-12 m-auto overflow-auto removeScrollbar">
+            <div className="flex w-11/12 gap-6 p-12 m-auto overflow-auto removeScrollbar animate-pop-up">
                 {!loading && newsData.map((news) => (
 
                     <a href={news.url}>
-                        <div key={news.id} className="text-white blog-case p-3">
+                        <div key={news.id} className="text-white  blog-case p-3">
 
                             <div className="w-[160px] h-[150px]   rounded-xl ">
                                 <img src={news.imageurl} alt="" />
